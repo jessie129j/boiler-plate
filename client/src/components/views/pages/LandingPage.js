@@ -1,8 +1,11 @@
 import {React,useEffect} from 'react'
 import Axios from 'axios';
 import { SERVER } from '../../config';
+import { useSelector } from 'react-redux';
 
 function LandingPage() {
+
+  const user=useSelector(state=>state.user);
 
   useEffect(()=>{
     const variables={
@@ -19,7 +22,14 @@ function LandingPage() {
 },[])
 
   return (
-    <div>LandingPage</div>
+    <div>
+      <div className="page-header">
+                <h1>LandingPage</h1>
+            </div>
+            <p>
+              Hello, {user.id}!
+            </p>
+    </div>
   )
 }
 

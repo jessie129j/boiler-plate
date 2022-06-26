@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import Axios from 'axios';
-import { SERVER } from '../../config';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../../_actions/user_actions';
 
 function LoginPage() {
     const navigate=useNavigate()
+    const dispatch=useDispatch()
 
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
@@ -28,15 +29,16 @@ function LoginPage() {
 
         console.log("bttn is clicked: " + JSON.stringify(body))
 
-        Axios.post(`${SERVER}/user/login`,body).then(res=>{
-            if(res.data.success){
-                console.log('You are logined. userId: ',res.data.userId);
+        dispatch(loginUser(body)).then(res=>{
+            if(res.payload.success){
+                console.log('You are logined. userId: ',res.payload.userId);
                 navigate('/');
             }
             else{
-                alert(res.data.message)
+                alert(res.payload.message)
             }
         })
+
     }
 
     return (

@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
-import Axios from 'axios';
-import { SERVER } from '../../config';
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux';
+import { loginUser, registerUser } from '../../../_actions/user_actions';
 
 function RegisterPage() {
     const navigate=useNavigate()
-    
+    const dispatch=useDispatch()
+
     const [Name, setName] = useState("")
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
@@ -33,21 +34,22 @@ function RegisterPage() {
 
         console.log("bttn is clicked: " + JSON.stringify(body))
 
-        Axios.post(`${SERVER}/user/register`,body).then(res=>{
-            if(res.data.success){
+        dispatch(registerUser(body)).then(res=>{
+            if(res.payload.success){
                 console.log('You are registered. userId: ',res.data.userId);
-                Axios.post(`${SERVER}/user/login`,body).then(res=>{
-                    if(res.data.success){
+                dispatch(loginUser(body)).then(res=>{
+                    if(res.payload.success){
                         console.log('You are logined. userId: ',res.data.userId);
                         navigate('/');
                     }
                     else{
-                        alert(res.data.message)
+                        alert(res.payload.message)
                     }
                 })
+        
             }
             else{
-                alert(res.data.message)
+                alert(res.payload.message)
             }
         })
     }

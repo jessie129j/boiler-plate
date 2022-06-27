@@ -8,6 +8,9 @@ import LandingPage from "./views/pages/LandingPage.js";
 import LoginPage from './views/pages/LoginPage.js';
 import RegisterPage from './views/pages/RegisterPage.js';
 import ProfilePage from './views/pages/ProfilePage.js';
+import ContentPage from './views/pages/ContentPage.js';
+import CreatePage from './views/pages/CreatePage.js';
+import UpdatePage from './views/pages/UpdatePage.js';
 
 function App() {
   return (
@@ -19,6 +22,9 @@ function App() {
           <Route exact path="/login" element={<LoginPage />} />
           <Route exact path="/register" element={<RegisterPage />} />
           <Route exact path="/profile" element={<ProfilePage />} />
+          <Route exact path="/content/create" element={<CreatePage />} />
+          <Route exact path="/content/read/:seq" element={<ContentPage />} />
+          <Route exact path="/content/update/:seq" element={<UpdatePage />} />
         </Routes>
       </div>
       <Footer />

@@ -2,9 +2,11 @@ import {React,useEffect} from 'react'
 import Axios from 'axios';
 import { SERVER } from '../../config';
 import { useSelector } from 'react-redux';
+import { useNavigate } from 'react-router'
+import TOC from '../partials/TOC';
 
 function LandingPage() {
-
+  const navigate=useNavigate();
   const user=useSelector(state=>state.user);
 
   useEffect(()=>{
@@ -29,6 +31,7 @@ function LandingPage() {
             <p>
               Hello, {user.id}!
             </p>
+            <TOC/>
     </div>
   )
 }

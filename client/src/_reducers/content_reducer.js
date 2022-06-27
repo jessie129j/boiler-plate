@@ -6,14 +6,13 @@ import {
 
 const initialState={
     isLogined:false,
-    id:'Stranger',
-    name:'Stranger'
+    id:'Stranger'
 }
 export default function(state=initialState,action){
     switch(action.type){
         case LOGIN_USER:
             if(action.payload.success){
-                return { ...state, isLogined:true,id:action.payload.userId,name:action.payload.userName }
+                return { ...state, isLogined:true,id:action.payload.userId }
             }
             return { ...state}
            

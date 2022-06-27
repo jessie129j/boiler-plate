@@ -2,6 +2,7 @@ import React from 'react'
 import { useNavigate } from "react-router-dom";
 import { useDispatch,useSelector } from 'react-redux';
 import { logoutUser } from '../../../_actions/user_actions';
+import img from '../../images/user.png'
 
 function ProfilePage() {
     const navigate=useNavigate()
@@ -34,12 +35,11 @@ function ProfilePage() {
 
                 <div className="card">
                     <br />
-                    <img className="card-img-top" src="imgsrc" alt="Card image cap" />
+                    <img className="card-img-top" src={img} />
                     <div className="card-block">
                         <h4 className="card-title">User Details</h4>
                         <p className="card-text">
-                            <strong>Name</strong>: {user.id} <br />
-                            <strong>Email</strong>: userEmail
+                            <strong>Name</strong>: {user.name} <br />
                         </p>
                         <button onClick={onClickHandler}>Logout</button>
                     </div>

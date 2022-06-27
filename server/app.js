@@ -5,6 +5,7 @@ var cors = require('cors')
 
 var indexRouter = require('./routes/index');
 var userRouter = require('./routes/user');
+var contentRouter=require('./routes/content')
 var testRouter = require('./routes/test');
 
 var config=require('./config/config.js')
@@ -23,6 +24,7 @@ app.use(cors())
 app.use('/', indexRouter);
 app.use('/api/user', userRouter);
 app.use('/api/test', testRouter);
+app.use('/api/content', contentRouter);
 
 module.exports = app;
 

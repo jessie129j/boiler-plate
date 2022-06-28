@@ -55,21 +55,23 @@ function RegisterPage() {
     }
 
     return (
-        <div>
-            <div className="page-header">
-                <h1>RegisterPage</h1>
+        <div className="body_wrap">
+            <div className="body_title">
+            <strong>RegisterPage</strong>
+                <p>Welcome Register</p>
             </div>
             <form className="form-register" onSubmit={onSubmitHandler}>
-                <h2 className="form-register-heading">Welcome Register</h2>
                 <label>Name</label>
                 <input type="name" value={Name} onChange={onNameHandler} placeholder="Name" /><br/>
                 <label>Email</label>
                 <input type="email" value={Email} onChange={onEmailHandler} placeholder="Email address" /><br/>
                 <label >Password</label>
                 <input type="password" value={Password} onChange={onPasswordHandler} placeholder="Password"/><br />
-                <button type="submit">
-                    Register
-                </button>
+                <div class="bt_wrap">
+                    <button type="submit">
+                        Register
+                    </button>
+                </div>
 
 
                 <p>Don't have an account? <a href="/login">Login</a>, it's free.</p>

@@ -55,19 +55,30 @@ function CreatePage() {
   }
 
   return (
-    <div>
-      <div className="page-header">
-        <h1>CreatePage</h1>
+    <div class="body_wrap">
+      <div className="body_title">
+        <strong>CreatePage</strong>
+        <p>Welcome </p>
       </div>
+
       <form className="form-create" onSubmit={onSubmitHandler}>
-        <h2 className="form-create-heading">Create Content</h2>
-        <label>Title</label>
-        <input type="text" value={Title} onChange={onTitleHandler} placeholder="Title" /><br />
-        <label>Description</label>
-        <input type="text" value={Description} onChange={onDescriptionHandler} placeholder="Description" /><br />
-        <button type="submit">
-          Create
-        </button>
+        <div class="content_view">
+          <div class="title">
+          <label>Title</label><br/>
+          <input type="text" value={Title} onChange={onTitleHandler} placeholder="Title" />
+          </div>
+         
+          <div class="cont">
+
+          <label>Description</label><br />
+          <input type="text" value={Description} onChange={onDescriptionHandler} placeholder="Description" />
+          </div>
+        </div>
+        <div class="bt_wrap">
+                    <button type="submit">
+                        Create
+                    </button>
+                </div>
 
       </form>
     </div>

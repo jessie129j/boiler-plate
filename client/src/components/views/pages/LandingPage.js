@@ -24,13 +24,11 @@ function LandingPage() {
 },[])
 
   return (
-    <div>
-      <div className="page-header">
-                <h1>LandingPage</h1>
-            </div>
-            <p>
-              Hello, {user.id}!
-            </p>
+      <div class="body_wrap">
+          <div class="body_title">
+              <strong>LandingPage - Table of Contents</strong>
+              <p>컨텐츠 목록입니다.</p>
+          </div>
             <TOC/>
     </div>
   )

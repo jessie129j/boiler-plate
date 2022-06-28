@@ -4,8 +4,8 @@ import { useDispatch } from 'react-redux';
 import { loginUser } from '../../../_actions/user_actions';
 
 function LoginPage() {
-    const navigate=useNavigate()
-    const dispatch=useDispatch()
+    const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const [Email, setEmail] = useState("")
     const [Password, setPassword] = useState("")
@@ -29,12 +29,12 @@ function LoginPage() {
 
         console.log("bttn is clicked: " + JSON.stringify(body))
 
-        dispatch(loginUser(body)).then(res=>{
-            if(res.payload.success){
-                console.log('You are logined. userId: ',res.payload.userId);
+        dispatch(loginUser(body)).then(res => {
+            if (res.payload.success) {
+                console.log('You are logined. userId: ', res.payload.userId);
                 navigate('/');
             }
-            else{
+            else {
                 alert(res.payload.message)
             }
         })
@@ -42,20 +42,22 @@ function LoginPage() {
     }
 
     return (
-        <div>
-            <div className="page-header">
-                <h1>LoginPage</h1>
+        <div class="body_wrap">
+            <div className="body_title">
+                <strong>LoginPage</strong>
+                <p>Welcome Login</p>
             </div>
             <form className="form-login" onSubmit={onSubmitHandler}>
-                <h2 className="form-login-heading">Welcome Login</h2>
-                <label>Email</label>
-                <input type="email" value={Email} onChange={onEmailHandler} placeholder="Email address" /><br/>
-                <label >Password</label>
-                <input type="password" value={Password} onChange={onPasswordHandler} placeholder="Password"/><br/>
-                <button type="submit">
-                    login
-                </button>
+                <label>Email</label><br />
+                <input type="email" value={Email} onChange={onEmailHandler} placeholder="Email address" /><br />
+                <label>Password</label><br />
+                <input type="password" value={Password} onChange={onPasswordHandler} placeholder="Password" /><br />
 
+                <div class="bt_wrap">
+                    <button type="submit">
+                        login
+                    </button>
+                </div>
 
                 <p>Don't have an account? <a href="/register">Register</a>, it's free.</p>
             </form>

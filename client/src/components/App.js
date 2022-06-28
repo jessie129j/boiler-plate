@@ -12,6 +12,8 @@ import ContentPage from './views/pages/ContentPage.js';
 import CreatePage from './views/pages/CreatePage.js';
 import UpdatePage from './views/pages/UpdatePage.js';
 
+import './App.css'
+
 function App() {
   return (
     <Suspense fallback={(<div>Loading...</div>)}>

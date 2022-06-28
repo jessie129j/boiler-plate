@@ -27,9 +27,9 @@ function ProfilePage() {
         }
 
     return (
-        <div className="container">
-            <div className="page-header">
-                <h1>ProfilePage</h1>
+        <div className="body_wrap">
+            <div className="body_title">
+                <strong>ProfilePage</strong>
             </div>
             <div className="datails">
 
@@ -37,11 +37,14 @@ function ProfilePage() {
                     <br />
                     <img className="card-img-top" src={img} />
                     <div className="card-block">
-                        <h4 className="card-title">User Details</h4>
+                        <strong className="card-title">User Details</strong>
                         <p className="card-text">
                             <strong>Name</strong>: {user.name} <br />
                         </p>
+                        <div class="bt_wrap">
                         <button onClick={onClickHandler}>Logout</button>
+                        </div>
+                        
                     </div>
                 </div>
             </div>

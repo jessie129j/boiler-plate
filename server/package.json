@@ -15,6 +15,8 @@
   },
   "devDependencies": {},
   "scripts": {
+    "dev":"pm2 start ecosystem.config.js",
+    "prod":"pm2 start ecosystem.config.js --env production",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
